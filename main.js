@@ -1,24 +1,16 @@
+const topKeys = ['KeyS', 'KeyA', 'KeyD', 'KeyF', 'KeyG', 'KeyH', 'KeyJ']
+const bottomKeys = ['KeyW', 'KeyE', 'KeyT', 'KeyY', 'KeyU']
+
 document.addEventListener('keypress', function (e) {
-    if (e.code === 'KeyS' ||
-        e.code === 'KeyQ' ||
-        e.code === 'KeyD' ||
-        e.code === 'KeyF' ||
-        e.code === 'KeyG' ||
-        e.code === 'KeyH' ||
-        e.code === 'KeyJ')
+    if (topKeys.includes(e.code))
     {
         let audio = document.createElement('audio');
-        audio.src = "white_keys/" + e.key + ".mp3";
+        audio.src = "./white_keys/" + e.key.toUpperCase() + ".mp3";
         audio.play();
     }
-    else if(
-        e.code === 'KeyZ' ||
-        e.code === 'KeyE' ||
-        e.code === 'KeyT' ||
-        e.code === 'KeyY' ||
-        e.code === 'KeyU' ){
+    else if(bottomKeys.includes(e.code)){
         let audio = document.createElement('audio');
-        audio.src = "black_keys/" + e.key + ".mp3";
+        audio.src = "./black_keys/" + e.key.toUpperCase() + ".mp3";
         audio.play();
     }
     else {
